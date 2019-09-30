@@ -21,14 +21,18 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main"/>
+    <FrameLayout
+            android:layout_marginBottom="56dp"
+            android:id="@+id/screen_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_dialog_email"/>
-
+    <com.iammert.library.readablebottombar.ReadableBottomBar
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:rbb_tabs="@xml/tabs"
+            android:id="@+id/bottombar"
+            app:rbb_initialIndex="0"
+            android:layout_gravity="bottom"
+            app:rbb_activeItemType="icon"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

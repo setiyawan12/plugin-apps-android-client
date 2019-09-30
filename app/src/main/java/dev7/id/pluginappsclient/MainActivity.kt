@@ -5,35 +5,64 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.Fragment
+import com.iammert.library.readablebottombar.ReadableBottomBar
+import dev7.id.pluginappsclient.fragments.AccountFragment
+import dev7.id.pluginappsclient.fragments.DashboardFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private var fragment : Fragment? = null
+    companion object { private var navStatus = 0}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        bottomBarListener()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun bottomBarListener(){
+        bottombar.setOnItemSelectListener(object : ReadableBottomBar.ItemSelectListener{
+            override fun onItemSelected(index: Int) {
+                when(index){
+                    0 -> {
+                        if(navStatus != 0){
+                            fragment = DashboardFragment()
+                            navStatus = 0
+                        }
+                    }
+
+                    else -> {
+                        if(navStatus != 1){
+                            fragment = AccountFragment()
+                            navStatus = 1
+                        }
+                    }
+                }
+                if(fragment == null){
+                    navStatus = 0
+                    fragment = DashboardFragment()
+                }
+
+                val fragmentManager = supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.screen_container, fragment!!)
+                fragmentTransaction.commit()
+            }
+        })
     }
 }
