@@ -11,16 +11,6 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:background="@drawable/bgheader"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvDesc"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="45dp"
-            android:text="Welcome Plugin"
-            android:textColor="#000"
-            android:textSize="17sp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/></LinearLayout>
+            android:background="@drawable/header2"/>
+
+</LinearLayout>
