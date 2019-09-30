@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.iammert.library.readablebottombar.ReadableBottomBar
 import dev7.id.pluginappsclient.fragments.AccountFragment
 import dev7.id.pluginappsclient.fragments.DashboardFragment
+import dev7.id.pluginappsclient.fragments.EventFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -46,10 +47,17 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-                    else -> {
+                    1 -> {
                         if(navStatus != 1){
-                            fragment = AccountFragment()
+                            fragment = EventFragment()
                             navStatus = 1
+                        }
+                    }
+
+                    else -> {
+                        if (navStatus != 2){
+                            fragment = AccountFragment()
+                            navStatus =2
                         }
                     }
                 }
