@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -7,10 +7,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="VectorDrawableCompat"
+        android:background="@color/colorPrimary"
         tools:context=".LoginActivity">
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:background="@drawable/bgheader"/>
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="397dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
 
-</LinearLayout>
+    >
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginEnd="10dp"
+            android:text="PLUG-IN"
+            android:fontFamily="@font/freya"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="100sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+
+    />
+
+    <EditText
+            android:id="@+id/username_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="320dp"
+            android:hint="Username"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawablePadding="25dp"
+            android:drawableTint="#B8B8B8"
+            android:textColor="#E9E9E9"
+            android:background="@drawable/bt_uiborder"
+            android:padding="12dp"
+            android:textColorHint="#B8B8B8"
+            android:inputType="textPersonName"
+            android:layout_marginEnd="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+ />
+    <EditText
+            android:id="@+id/password_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="385dp"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/bt_uiborder"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="25dp"
+            android:drawableTint="#B8B8B8"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="#E9E9E9"
+            android:textColorHint="#B8B8B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+            android:id="@+id/complete_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="584dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="8dp"e
+            android:text="LOGIN"
+            android:textSize="50dp"
+            android:fontFamily="@font/freya"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
