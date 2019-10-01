@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:focusableInTouchMode="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="VectorDrawableCompat"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <RelativeLayout
+        android:layout_weight="0"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="VectorDrawableCompat"
-        tools:context=".LoginActivity">
-    <ImageView
+        android:layout_height="wrap_content">
+
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:background="@drawable/bgheader"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header_login"
+            android:scaleType="fitXY"/>
+
+        <!--TODO : Create TextView (Tittle) create ImageView (Image Login) Look at the picture  @Conversation group Github Teams -->
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--TODO : Create Login Form using Material Design, & You Must Update IDE to get Last Update Material-->
+    </LinearLayout>
 
 </LinearLayout>
