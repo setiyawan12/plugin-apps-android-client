@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -7,96 +7,87 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="VectorDrawableCompat"
-        android:background="@color/colorPrimary"
-        tools:context=".LoginActivity">
-    <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar3"
-            android:layout_width="397dp"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+        tools:context=".LoginActivity"
+        android:orientation="vertical"
+        android:weightSum="2">
 
-    >
-    </androidx.appcompat.widget.Toolbar>
-    <TextView
-            android:id="@+id/textView"
+    <RelativeLayout
+            android:layout_weight="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header_login"
+                android:scaleType="fitXY" />
+
+        <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/image_login">
+
+        </ImageView>
+
+        <!--TODO : Create TextView (Tittle) create ImageView (Image Login) Look at the picture  @Conversation group Github Teams -->
+
+    </RelativeLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="185dp"
-            android:layout_marginEnd="10dp"
-            android:text="PLUG-IN"
-            android:fontFamily="@font/freya"
-            android:textAlignment="center"
-            android:textColor="@color/colorWhite"
-            android:textSize="100sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:padding="20dp">
 
-    />
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/colorBlue"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
 
-    <EditText
-            android:id="@+id/username_box"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="320dp"
-            android:hint="Username"
-            android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:drawablePadding="25dp"
-            android:drawableTint="#B8B8B8"
-            android:textColor="#E9E9E9"
-            android:background="@drawable/bt_uiborder"
-            android:padding="12dp"
-            android:textColorHint="#B8B8B8"
-            android:inputType="textPersonName"
-            android:layout_marginEnd="35dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
- />
-    <EditText
-            android:id="@+id/password_box"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="385dp"
-            android:layout_marginEnd="35dp"
-            android:background="@drawable/bt_uiborder"
-            android:drawableLeft="@drawable/ic_lock"
-            android:drawablePadding="25dp"
-            android:drawableTint="#B8B8B8"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:textColor="#E9E9E9"
-            android:textColorHint="#B8B8B8"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-    <Button
-            android:id="@+id/complete_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="584dp"
-            android:layout_marginEnd="45dp"
-            android:layout_marginBottom="8dp"e
-            android:text="LOGIN"
-            android:textSize="50dp"
-            android:fontFamily="@font/freya"
-            android:textColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"/>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                app:boxStrokeColor="@color/bordercolor"
+                app:passwordToggleEnabled="true"
+                android:layout_margin="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+            />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:text="LOGIN"
+        />
+
+        <!--TODO : Create Login Form using Material Design, & You Must Update IDE to get Last Update Material-->
+    </LinearLayout>
+</LinearLayout>
