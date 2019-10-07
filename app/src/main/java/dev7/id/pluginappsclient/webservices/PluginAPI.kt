@@ -42,7 +42,7 @@ interface PluginAPIService {
 data class WrappedResponse<T> (
     @SerializedName("message") var message : String?,
     @SerializedName("status") var status : Boolean? ,
-    @SerializedName("data") var data : T?
+    @SerializedName("results") var data : T?
 ){
     constructor() : this(null, null, null)
 }
@@ -50,7 +50,7 @@ data class WrappedResponse<T> (
 data class WrappedListResponse<T> (
     @SerializedName("message") var message : String?,
     @SerializedName("status") var status : Boolean?,
-    @SerializedName("users") var data : List<T>?
+    @SerializedName("results") var data : List<T>?
 ){
     constructor() : this(null, null, null)
 
