@@ -54,4 +54,5 @@ dependencies {
     //ui ux, we will use COIL for 100% kotlin project
     implementation "io.coil-kt:coil:0.7.0"
     implementation 'com.github.iammert:ReadableBottomBar:0.2'
+
 }

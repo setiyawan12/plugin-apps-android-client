@@ -23,12 +23,11 @@
                 android:scaleType="fitXY" />
 
         <ImageView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/image_login">
 
         </ImageView>
@@ -47,46 +46,44 @@
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                android:id="@+id/inId"
                 android:layout_height="wrap_content"
                 android:hint="@string/username"
-                android:layout_margin="10dp"
+                app:errorEnabled="true"
                 app:boxStrokeColor="@color/colorBlue"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        >
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/etId"
                     android:layout_height="wrap_content"
                     android:inputType="text"/>
-
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
+                app:errorEnabled="true"
+                android:id="@+id/inPass"
                 app:boxStrokeColor="@color/bordercolor"
                 app:passwordToggleEnabled="true"
-                android:layout_margin="10dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        >
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-            />
+                    android:id="@+id/etPass"
+                    android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
                 android:padding="10dp"
-                android:text="LOGIN"
-        />
+                android:text="@string/login" />
 
         <!--TODO : Create Login Form using Material Design, & You Must Update IDE to get Last Update Material-->
     </LinearLayout>

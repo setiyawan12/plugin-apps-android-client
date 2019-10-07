@@ -22,6 +22,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
+            android:layout_marginTop="56dp"
             android:layout_marginBottom="56dp"
             android:id="@+id/screen_container"
             android:layout_width="match_parent"
@@ -31,8 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             app:rbb_tabs="@xml/tabs"
-            android:id="@+id/bottombar"
             app:rbb_initialIndex="0"
+            android:id="@+id/bottombar"
             android:layout_gravity="bottom"
             app:rbb_activeItemType="icon"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

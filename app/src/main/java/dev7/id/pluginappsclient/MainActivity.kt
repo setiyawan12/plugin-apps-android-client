@@ -5,6 +5,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.iammert.library.readablebottombar.ReadableBottomBar
 import dev7.id.pluginappsclient.fragments.AccountFragment
@@ -15,13 +16,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private var fragment : Fragment? = null
-    companion object { private var navStatus = 0}
+    companion object { private var navStatus = -1}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         bottomBarListener()
+        initFragment()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -46,31 +48,37 @@ class MainActivity : AppCompatActivity() {
                             navStatus = 0
                         }
                     }
-
                     1 -> {
                         if(navStatus != 1){
                             fragment = EventFragment()
                             navStatus = 1
                         }
                     }
-
-                    else -> {
-                        if (navStatus != 2){
+                    2 -> {
+                        if(navStatus != 2){
                             fragment = AccountFragment()
-                            navStatus =2
+                            navStatus = 2
                         }
                     }
-                }
-                if(fragment == null){
-                    navStatus = 0
-                    fragment = DashboardFragment()
-                }
 
-                val fragmentManager = supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.screen_container, fragment!!)
-                fragmentTransaction.commit()
+                    else -> {
+                        fragment = DashboardFragment()
+                        navStatus = 0
+                    }
+                }
+                initFragment()
             }
         })
+    }
+
+    private fun initFragment(){
+        if(fragment == null){
+            navStatus = 0
+            fragment = DashboardFragment()
+        }
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.screen_container, fragment!!)
+        fragmentTransaction.commit()
     }
 }
