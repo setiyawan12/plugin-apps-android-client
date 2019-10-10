@@ -1,13 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context=".Profile_Activity"
         android:orientation="vertical">
 
-    <TextView
-            android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Akun fragment" />
+            android:gravity="center_horizontal"
+            android:background="@color/colorWhite"
+            android:id="@+id/appbarid">
 
-</RelativeLayout>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:src="@drawable/wiyata"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                android:textColor="@color/colorFont"
+                android:layout_marginBottom="10dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingTop="20dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLUGIN TEGAL"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTab"
+            />
+</LinearLayout>
