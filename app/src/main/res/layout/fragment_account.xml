@@ -1,51 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_height="match_parent"
-        tools:context=".Profile_Activity"
-        android:orientation="vertical">
+        tools:context=".Profile_Activity">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:background="@color/colorWhite"
-            android:id="@+id/appbarid">
+            android:layout_height="wrap_content">
 
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="25dp"
-                android:src="@drawable/wiyata"/>
+        <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="190dp">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nama Lengkap"
-                android:textColor="@color/colorFont"
-                android:layout_marginBottom="10dp"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:paddingTop="20dp"/>
+            <ImageView
+                    android:id="@+id/account_bg"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"/>
+            <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/account_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PLUGIN TEGAL"
-                android:layout_marginBottom="10dp"
-                android:textSize="15sp"
-                android:textStyle="bold"/>
+        </RelativeLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/account_tabs"
+                app:tabTextColor="#000"
+                app:tabGravity="fill"
+                app:tabMode="scrollable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorTab"
-            />
-</LinearLayout>
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

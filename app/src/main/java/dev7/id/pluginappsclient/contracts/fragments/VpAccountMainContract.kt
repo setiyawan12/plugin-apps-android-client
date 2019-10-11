@@ -1,10 +1,10 @@
 package dev7.id.pluginappsclient.contracts.fragments
 
-interface EventFragmentContract {
+interface VpAccountMainContract {
     interface View {
-        fun toast(message : String)
+        fun bind()
     }
-
     interface Interactor{
+        fun destroy()
     }
 }
