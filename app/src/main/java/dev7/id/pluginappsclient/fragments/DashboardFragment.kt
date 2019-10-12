@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.smarteist.autoimageslider.IndicatorAnimations
+import com.smarteist.autoimageslider.SliderAnimations
 import dev7.id.pluginappsclient.R
 import dev7.id.pluginappsclient.adapters.CarouselAdapter
 import dev7.id.pluginappsclient.adapters.UserAdapter
@@ -26,13 +27,18 @@ class DashboardFragment : Fragment(), DashboardFragmentContract.View {
         super.onViewCreated(view, savedInstanceState)
         presenter.allUser()
         val events = mutableListOf<Event>().apply {
-            add(Event(1, "Lomba 1", "https://media.thestar.com.my/Prod/BC31E7E4-06FF-40A1-8B75-E812DE06F54B"))
-            add(Event(1, "Lomba 2", "https://media.thestar.com.my/Prod/BC31E7E4-06FF-40A1-8B75-E812DE06F54B"))
-            add(Event(1, "Lomba 3", "https://media.thestar.com.my/Prod/BC31E7E4-06FF-40A1-8B75-E812DE06F54B"))
+            add(Event(1, "Lomba 1", "https://www.appohm.com/wp-content/uploads/2019/04/ui-1.jpg"))
+            add(Event(1, "Lomba 2", "https://theninehertz.com/wp-content/uploads/2019/04/hire-ui-ux-designers-bnr-img.png"))
+            add(Event(1, "Lomba 4", "https://qubstudio.com/wp-content/uploads/2018/12/trends_in_ux_for_ecommerce_websites.png"))
+            add(Event(1, "Lomba 6", "https://blog.creative-tim.com/wp-content/uploads/2019/01/1_RTaL5dyKdVjXmFmC756hUw-730x410.png")
+
+
+            )
         }
         view.imageSlider.sliderAdapter = CarouselAdapter(activity!!, events)
         view.imageSlider.startAutoCycle()
         view.imageSlider.setIndicatorAnimation(IndicatorAnimations.WORM)
+        view.imageSlider.setSliderTransformAnimation(SliderAnimations.ZOOMOUTTRANSFORMATION)
     }
 
     override fun attachToRecycler(users: List<User>) {
