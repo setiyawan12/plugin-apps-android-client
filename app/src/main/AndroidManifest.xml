@@ -15,7 +15,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".Profile_Activity"></activity>
+        <activity
+                android:name=".Detail_EventActivity"
+                android:label="@string/title_activity_detail__event"
+                android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Profile_Activity" />
         <activity android:name=".MainActivity" />
         <activity
                 android:name=".LoginActivity"
