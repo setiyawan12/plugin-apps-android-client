@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -49,18 +49,19 @@
 
     <TextView
             android:id="@+id/TV1"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="180dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textStyle="bold"
             android:text="Nama Event"
             android:layout_below="@id/app_bar"
-            android:gravity="center"/>
+            android:gravity="center"
+            />
 
     <include
             layout="@layout/content_detail__event"/>
 
 
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
