@@ -46,6 +46,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //profile
+    implementation 'com.android.support:design:29.0.0'
+    implementation 'com.android.support:cardview-v7:29.0.0'
+
     //web service
     implementation "com.squareup.retrofit2:retrofit:2.6.0"
     implementation "com.squareup.retrofit2:converter-gson:2.6.0"
