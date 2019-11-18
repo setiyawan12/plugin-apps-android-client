@@ -3,6 +3,7 @@ package dev7.id.pluginappsclient
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import dev7.id.pluginappsclient.contracts.activities.LoginActivityContract
 import dev7.id.pluginappsclient.presenters.activities.LoginActivityPresenter
@@ -14,6 +15,8 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         btnLogin.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
