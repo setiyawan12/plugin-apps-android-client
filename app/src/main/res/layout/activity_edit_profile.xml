@@ -36,7 +36,16 @@
                         android:layout_height="100dp"
                         android:src="@drawable/pr"
                         android:layout_centerHorizontal="true"
-                        android:elevation="1dp"/>
+                        android:elevation="1dp"
+                        />
+                <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/edit"
+                        android:layout_marginLeft="230dp"
+                        android:layout_marginTop="80dp"
+                        android:elevation="1dp"
+                        />
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -49,7 +58,7 @@
                                 android:paddingLeft="15dp"
                                 android:paddingRight="15dp"
                                 android:paddingBottom="15dp"
-                                app:cardCornerRadius="20dp">
+                                app:cardCornerRadius="30dp">
                                 <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -66,6 +75,15 @@
                                             android:textColor="@color/colorDark"
                                             android:textSize="25sp"
                                             android:textStyle="bold"/>
+                                <ScrollView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent">
                                         <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -85,9 +103,6 @@
                                                 android:textColor="@color/colorDark"
                                                 android:textStyle="bold"
                                                 android:theme="@style/CardView.Dark"/>
-                                        <view
-                                                android:layout_width="0dp"
-                                                android:layout_height="3dp"/>
                                     <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -107,9 +122,6 @@
                                             android:textColor="@color/colorDark"
                                             android:textStyle="bold"
                                             android:theme="@style/CardView.Dark"/>
-                                    <view
-                                            android:layout_width="0dp"
-                                            android:layout_height="1dp"/>
                                     <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -129,9 +141,6 @@
                                             android:textColor="@color/colorDark"
                                             android:textStyle="bold"
                                             android:theme="@style/CardView.Dark"/>
-                                    <view
-                                            android:layout_width="0dp"
-                                            android:layout_height="1dp"/>
                                     <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -151,9 +160,6 @@
                                             android:textColor="@color/colorDark"
                                             android:textStyle="bold"
                                             android:theme="@style/CardView.Dark"/>
-                                    <view
-                                            android:layout_width="0dp"
-                                            android:layout_height="1dp"/>
                                     <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -173,9 +179,6 @@
                                             android:textColor="@color/colorDark"
                                             android:textStyle="bold"
                                             android:theme="@style/CardView.Dark"/>
-                                    <view
-                                            android:layout_width="0dp"
-                                            android:layout_height="1dp"/>
 
                                     <Button
                                             android:layout_width="match_parent"
@@ -187,7 +190,8 @@
                                             android:textColor="@color/colorWhite"
                                             android:textStyle="bold"
                                     />
-
+                                    </LinearLayout>
+                                </ScrollView>
                                 </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
