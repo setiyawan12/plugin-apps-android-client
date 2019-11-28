@@ -15,12 +15,34 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        supportActionBar?.hide()
+        presenter = LoginActivityPresenter(this)
+        dologin()
 
-        btnLogin.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+//
+//        btnLogin.setOnClickListener {
+//            startActivity(Intent(this, MainActivity::class.java))
+//        }
+    }
+
+    private fun dologin(){
+        btnLogin.setOnClickListener{
+            val  i = etId.text.toString().trim()
+            val p = etPass.text.toString().trim()
+            if (i.isNotEmpty() && p.isNotEmpty()){
+                if (p.length > 6){
+                    presenter.login(i, p, this@LoginActivity)
+                }else{
+                    toast("password harus lebih dari 6 karakter")
+                }
+            }else{
+                toast("tolong isikan semua kolom")
+            }
         }
     }
+
+
 
     override fun toast(message: String) = Toast.makeText(this@LoginActivity, message, Toast.LENGTH_LONG).show()
 

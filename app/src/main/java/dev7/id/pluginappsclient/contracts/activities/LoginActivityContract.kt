@@ -1,5 +1,7 @@
 package dev7.id.pluginappsclient.contracts.activities
 
+import android.content.Context
+
 interface LoginActivityContract {
     interface View {
         fun toast(message : String)
@@ -11,7 +13,7 @@ interface LoginActivityContract {
 
     interface Interactor {
         fun validate(id : String, pass : String) : Boolean
-        fun login(id : String, pass : String)
+        fun login(member_id : String, pass : String, context: Context)
         fun destroy()
     }
 }

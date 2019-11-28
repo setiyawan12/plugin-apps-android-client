@@ -7,7 +7,10 @@ import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.POST
 import java.util.concurrent.TimeUnit
 
 class PluginAPI {
@@ -25,6 +28,7 @@ class PluginAPI {
                 retrofit!!
             }
         }
+        fun instance_api() : PluginAPIService = getClient().create(PluginAPIService::class.java)
     }
 }
 
@@ -32,6 +36,10 @@ class PluginAPI {
 interface PluginAPIService {
     @GET("api/users/")
     fun users() : Call<WrappedListResponse<User>>
+
+    @FormUrlEncoded
+    @POST("api/login")
+    fun login(@Field("member_id") member_id : String, @Field("password") password : String) : Call<WrappedResponse<User>>
 }
 
 
@@ -41,7 +49,7 @@ interface PluginAPIService {
 //Kalo push an ini error saat get users, ganti "data" di bawah sesuai dengan gantiane izza
 data class WrappedResponse<T> (
     @SerializedName("message") var message : String?,
-    @SerializedName("status") var status : Boolean? ,
+    @SerializedName("status") var status : String? ,
     @SerializedName("results") var data : T?
 ){
     constructor() : this(null, null, null)

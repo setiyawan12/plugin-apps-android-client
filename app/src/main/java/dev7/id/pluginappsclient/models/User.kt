@@ -8,7 +8,8 @@ data class User(
     @SerializedName("email") var email : String? ,
     @SerializedName("role") var role : String?,
     @SerializedName("avatar") var avatar : String?,
-    @SerializedName("status") var status : String?
+    @SerializedName("status") var status : String?,
+    @SerializedName("api_token") var api_token : String?
 ) {
-    constructor() : this(null, null, null, null, null, null)
+    constructor() : this(null, null, null, null, null, null, null)
 }
