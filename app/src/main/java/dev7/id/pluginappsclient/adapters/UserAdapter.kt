@@ -27,6 +27,7 @@ class UserAdapter(var users : List<User>, var context: Context) : RecyclerView.A
             itemView.userImage.load("${PluginUtils.API_ENDPOINT}/images/${user.avatar}"){ transformations(CircleCropTransformation()) }
             itemView.setOnClickListener {
                 Toast.makeText(context, "${user.member_id}", Toast.LENGTH_SHORT).show()
+
             }
         }
     }
