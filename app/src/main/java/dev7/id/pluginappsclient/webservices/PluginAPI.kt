@@ -38,23 +38,9 @@ interface PluginAPIService {
     fun users() : Call<WrappedListResponse<User>>
 
     @FormUrlEncoded
-<<<<<<< HEAD
     @POST("api/login")
     fun login(@Field("member_id") member_id : String, @Field("password") password : String) : Call<WrappedResponse<User>>
-=======
-    @POST("api/login/")
-    fun login(@Field("member_id") member_id : String , @Field("password") password : String) : Call<WrappedResponse<User>>
->>>>>>> 1f1522fab87ea84fa498a980ae8cca2c5f5a8c01
 }
-
-interface PluginEvent {
-
-}
-
-//interface PluginAPIService {
-//    @GET("api/users/")
-//    fun users() : Call<WrappedListResponse<User>>
-//}
 
 
 
