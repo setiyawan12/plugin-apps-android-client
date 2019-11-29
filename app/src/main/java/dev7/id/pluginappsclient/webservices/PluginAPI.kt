@@ -31,8 +31,6 @@ class PluginAPI {
         fun instance_api() : PluginAPIService = getClient().create(PluginAPIService::class.java)
     }
 }
-
-
 interface PluginAPIService {
     @GET("api/users/")
     fun users() : Call<WrappedListResponse<User>>

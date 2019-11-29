@@ -5,11 +5,11 @@ import dev7.id.pluginappsclient.contracts.activities.LoginActivityContract
 import dev7.id.pluginappsclient.models.User
 import dev7.id.pluginappsclient.utilities.PluginUtils
 import dev7.id.pluginappsclient.webservices.PluginAPI
+import dev7.id.pluginappsclient.webservices.WrappedListResponse
 import dev7.id.pluginappsclient.webservices.WrappedResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 class LoginActivityPresenter(v : LoginActivityContract.View?) : LoginActivityContract.Interactor {
     private var view : LoginActivityContract.View? = v
     private var api = PluginAPI.instance_api()

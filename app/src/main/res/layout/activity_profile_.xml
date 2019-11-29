@@ -7,52 +7,35 @@
         tools:context=".Profile_Activity"
         android:orientation="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:gravity="center_horizontal"
-                android:elevation="0dp"
-                android:id="@+id/appbarid">
-
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="25dp"
-                    android:src="@drawable/wiyata"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nama Lengkap"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:paddingTop="20dp"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PLUGIN TEGAL"
-                    android:textSize="15sp"
-                    android:textStyle="bold"/>
-
-        </com.google.android.material.appbar.AppBarLayout>
-    <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
+    <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabMode="fixed"
-            android:id="@+id/tablayout_id"
-            app:tabIndicatorColor="@color/colorWhite"
-            android:background="@color/colorWhite"
-            />
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:src="@drawable/wajah"
+            android:layout_gravity="center"
+            android:paddingTop="20dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/member_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/member_role"
+            android:textSize="15sp"
+            android:layout_gravity="center"/>
     <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/viewpager_id"/>
-
-
-
+            android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top" />
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>

@@ -29,6 +29,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    //parceluble
+    androidExtensions {
+        experimental=true
+    }
 }
 
 dependencies {
@@ -66,5 +70,6 @@ dependencies {
     implementation 'com.github.florent37:shapeofview:1.3.0'
 
     //animmtion splash
-    implementation 'com.airbnb.android:lottie:2.7.0'
+    def lottieVersion = "3.0.7"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
