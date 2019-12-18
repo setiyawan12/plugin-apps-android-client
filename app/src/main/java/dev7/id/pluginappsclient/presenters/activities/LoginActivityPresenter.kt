@@ -34,6 +34,7 @@ class LoginActivityPresenter(v : LoginActivityContract.View?) : LoginActivityCon
             override fun onFailure(call: Call<WrappedResponse<User>>, t: Throwable) {
                 view?.toast("tidak dapat terhubung ke server")
                 println(t.message)
+                view?.notConect()
             }
 
             override fun onResponse(

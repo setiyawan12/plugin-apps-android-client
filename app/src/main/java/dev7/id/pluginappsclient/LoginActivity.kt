@@ -19,12 +19,10 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
         presenter = LoginActivityPresenter(this)
         dologin()
 
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-//
-//        btnLogin.setOnClickListener {
-//            startActivity(Intent(this, MainActivity::class.java))
-//        }
+
+
     }
+
 
     private fun dologin(){
         btnLogin.setOnClickListener{
@@ -39,6 +37,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
             }else{
                 toast("tolong isikan semua kolom")
             }
+
         }
     }
 
@@ -54,4 +53,11 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
 
     override fun passwordError(err: String?) { inPass.error = err }
 
+    override fun notConect() {
+        btnLogin.isEnabled = true
+    }
+
+
 }
+
+

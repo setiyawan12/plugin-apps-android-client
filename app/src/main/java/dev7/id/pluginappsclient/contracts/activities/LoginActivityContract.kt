@@ -9,6 +9,7 @@ interface LoginActivityContract {
         fun isLoading(state : Boolean)
         fun idError(err : String?)
         fun passwordError(err : String?)
+        fun notConect()
     }
 
     interface Interactor {
