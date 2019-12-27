@@ -46,18 +46,100 @@
     />
 
     <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="452dp"
-            android:gravity="center"
-            android:text="UTEKE LAGI JALAN GAES"
-            android:textColor="#374160"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            android:layout_below="@+id/imageSlider"
+            android:id="@+id/judul"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Judul acara"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_margin="10dp"/>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/judul"
+            android:layout_margin="12dp"
+            android:layout_height="1dp"
+            android:background="@color/colorDark" />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/judul"
+            android:id="@+id/deskripsi"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Deskripsi"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_margin="10dp"/>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/deskripsi"
+            android:layout_margin="12dp"
+            android:layout_height="1dp"
+            android:background="@color/colorDark" />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/deskripsi"
+            android:id="@+id/waktu"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Waktu Dan Tanggal"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_margin="10dp"/>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/waktu"
+            android:layout_margin="12dp"
+            android:layout_height="1dp"
+            android:background="@color/colorDark" />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waktu"
+            android:id="@+id/tempat"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Tempat"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_margin="10dp"/>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tempat"
+            android:layout_margin="12dp"
+            android:layout_height="1dp"
+            android:background="@color/colorDark" />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tempat"
+            android:id="@+id/kategori"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Kategori"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_margin="10dp"/>
+    <View
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/kategori"
+            android:layout_margin="12dp"
+            android:layout_height="1dp"
+            android:background="@color/colorDark" />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kategori"
+            android:id="@+id/poster"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Pamflet/Poster"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_margin="10dp"/>
 
 </RelativeLayout>
