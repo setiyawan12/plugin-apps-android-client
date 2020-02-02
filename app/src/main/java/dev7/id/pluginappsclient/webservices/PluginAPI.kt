@@ -7,10 +7,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 class PluginAPI {
@@ -32,8 +29,8 @@ class PluginAPI {
     }
 }
 interface PluginAPIService {
-    @GET("api/users/")
-    fun users() : Call<WrappedListResponse<User>>
+    @GET("api/users")
+    fun users(@Header("Authorization") api_token : String) : Call<WrappedListResponse<User>>
 
     @FormUrlEncoded
     @POST("api/login")

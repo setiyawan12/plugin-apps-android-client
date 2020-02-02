@@ -11,9 +11,9 @@ import retrofit2.Response
 class DashboardFragmentPresenter(private var view : DashboardFragmentContract.View?) : DashboardFragmentContract.Interactor {
     private var api = PluginAPI.instance()
 
-    override fun allUser() {
+    override fun allUser(api_token: String) {
         view?.isLoading(true)
-        api.users().enqueue(object : Callback<WrappedListResponse<User>>{
+        api.users(api_token).enqueue(object : Callback<WrappedListResponse<User>>{
             override fun onFailure(call: Call<WrappedListResponse<User>>, t: Throwable) {
                 view?.isLoading(false)
                 view?.toast(t.message.toString())

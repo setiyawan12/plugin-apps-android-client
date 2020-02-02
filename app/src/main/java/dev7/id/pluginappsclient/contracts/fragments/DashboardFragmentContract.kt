@@ -10,7 +10,7 @@ interface DashboardFragmentContract {
     }
     interface Interactor{
         fun destroy()
-        fun allUser()
+        fun allUser(api_token : String)
     }
 
 }

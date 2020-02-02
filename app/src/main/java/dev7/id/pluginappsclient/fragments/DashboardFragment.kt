@@ -16,6 +16,7 @@ import dev7.id.pluginappsclient.contracts.fragments.DashboardFragmentContract
 import dev7.id.pluginappsclient.models.Event
 import dev7.id.pluginappsclient.models.User
 import dev7.id.pluginappsclient.presenters.fragments.DashboardFragmentPresenter
+import dev7.id.pluginappsclient.utilities.PluginUtils
 import kotlinx.android.synthetic.main.fragment_dashboard.view.*
 
 class DashboardFragment : Fragment(), DashboardFragmentContract.View {
@@ -25,7 +26,9 @@ class DashboardFragment : Fragment(), DashboardFragmentContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.allUser()
+
+        presenter.allUser("Bearer ${PluginUtils.getToken(activity!!)}")
+
         val events = mutableListOf<Event>().apply {
             add(Event(1, "Lomba 1", "https://www.appohm.com/wp-content/uploads/2019/04/ui-1.jpg"))
             add(Event(1, "Lomba 2", "https://theninehertz.com/wp-content/uploads/2019/04/hire-ui-ux-designers-bnr-img.png"))
