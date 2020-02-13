@@ -27,15 +27,13 @@ class DashboardFragment : Fragment(), DashboardFragmentContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        presenter.allUser("Bearer ${PluginUtils.getToken(activity!!)}")
+        presenter.allUser("${PluginUtils.getToken(activity!!)}")
 
         val events = mutableListOf<Event>().apply {
             add(Event(1, "Lomba 1", "https://www.appohm.com/wp-content/uploads/2019/04/ui-1.jpg"))
             add(Event(1, "Lomba 2", "https://theninehertz.com/wp-content/uploads/2019/04/hire-ui-ux-designers-bnr-img.png"))
             add(Event(1, "Lomba 4", "https://qubstudio.com/wp-content/uploads/2018/12/trends_in_ux_for_ecommerce_websites.png"))
             add(Event(1, "Lomba 6", "https://blog.creative-tim.com/wp-content/uploads/2019/01/1_RTaL5dyKdVjXmFmC756hUw-730x410.png")
-
-
             )
         }
         view.imageSlider.sliderAdapter = CarouselAdapter(activity!!, events)

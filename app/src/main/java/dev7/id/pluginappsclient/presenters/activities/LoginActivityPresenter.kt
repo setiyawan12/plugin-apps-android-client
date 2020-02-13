@@ -28,7 +28,7 @@ class LoginActivityPresenter(v : LoginActivityContract.View?) : LoginActivityCon
         return true
     }
 
-    override fun login(member_id: String, password: String, context: Context) {
+    override fun login(member_id: String, password: String) {
         view?.isLoading(state = true)
         api.login(member_id, password).enqueue(object : Callback<WrappedResponse<User>>{
             override fun onFailure(call: Call<WrappedResponse<User>>, t: Throwable) {
@@ -37,28 +37,19 @@ class LoginActivityPresenter(v : LoginActivityContract.View?) : LoginActivityCon
                 view?.notConect()
             }
 
-            override fun onResponse(
-                call: Call<WrappedResponse<User>>,
-                response: Response<WrappedResponse<User>>
-            ) {
+            override fun onResponse(call: Call<WrappedResponse<User>>, response: Response<WrappedResponse<User>>) {
                 if (response.isSuccessful){
                     val body = response.body()
                     if (body !=null && body.status.equals("true")){
-                        PluginUtils.setToken(context, body.data?.api_token!!)
-                        println(body.data!!.api_token)
                         view?.toast("Selamat datang ${body.data!!.name}")
-                        view?.success()
+                        view?.success(body.data?.api_token!!)
                     }else{
                         view?.toast("Gagal login. cek username dan password")
                     }
-
                 }else{
-
                     view?.toast("Ada yang salah, coba lagi nanti")
-
                 }
-
-
+                view?.isLoading(false)
             }
         })
 

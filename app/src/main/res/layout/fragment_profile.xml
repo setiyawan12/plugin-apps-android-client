@@ -8,7 +8,7 @@
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="30dp">
     <LinearLayout
@@ -51,11 +51,11 @@
                 android:paddingTop="5dp"
                 android:textSize="15sp"
                 android:id="@+id/Nim"/>
+
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/nim"
-                />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
     </LinearLayout>
     <View
             android:layout_width="match_parent"
@@ -99,12 +99,11 @@
                 android:layout_height="wrap_content"
                 android:text="Email"
                 android:paddingTop="5dp"
-                android:textSize="15sp"
-                android:id="@+id/email"/>
+                android:textSize="15sp"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/address"
+                android:id="@+id/email"
                 />
     </LinearLayout>
     <View

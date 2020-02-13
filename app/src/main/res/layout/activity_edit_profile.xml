@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite"
+        android:background="@color/colorTab"
         tools:context=".edit_profile">
       <ImageView
               android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit Profile"
+                android:text="@string/edit_Profile"
                 android:textSize="25sp"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
@@ -30,7 +30,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="130dp">
+                    android:layout_marginBottom="15dp"
+                android:layout_marginTop="120dp">
                 <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
@@ -51,6 +52,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <androidx.cardview.widget.CardView
+                                android:elevation="15dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="35dp"
@@ -58,7 +60,8 @@
                                 android:paddingLeft="15dp"
                                 android:paddingRight="15dp"
                                 android:paddingBottom="15dp"
-                                app:cardCornerRadius="30dp">
+                                app:cardCornerRadius="5dp"
+                                android:background="@drawable/bt_uiedit">
                                 <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -80,116 +83,152 @@
                                         android:layout_height="match_parent">
                                     <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:orientation="vertical">
-                                                android:layout_width="match_parent"
-                                                android:layout_height="match_parent">
                                         <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="Nama Panggilan"
-                                                android:textAlignment="center"
-                                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                                android:textColor="@color/colorDark"/>
-                                        <com.google.android.material.textfield.TextInputEditText
+                                                android:text="@string/nama_panggilan"
+                                                android:layout_marginLeft="28dp"
+                                                android:layout_marginRight="28dp"/>
+                                        <com.google.android.material.textfield.TextInputLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                android:layout_marginLeft="3dp"
-                                                android:layout_marginRight="3dp"
-                                                android:maxLength="20"
-                                                android:maxLines="1"
-                                                android:singleLine="true"
-                                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                                android:textColor="@color/colorDark"
-                                                android:textStyle="bold"
-                                                android:theme="@style/CardView.Dark"/>
-                                    <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Email"
-                                            android:textAlignment="center"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"/>
-                                    <com.google.android.material.textfield.TextInputEditText
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="3dp"
-                                            android:layout_marginRight="3dp"
-                                            android:maxLength="20"
-                                            android:maxLines="1"
-                                            android:singleLine="true"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"
-                                            android:textStyle="bold"
-                                            android:theme="@style/CardView.Dark"/>
-                                    <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="No. Hp"
-                                            android:textAlignment="center"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"/>
-                                    <com.google.android.material.textfield.TextInputEditText
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="3dp"
-                                            android:layout_marginRight="3dp"
-                                            android:maxLength="20"
-                                            android:maxLines="1"
-                                            android:singleLine="true"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"
-                                            android:textStyle="bold"
-                                            android:theme="@style/CardView.Dark"/>
-                                    <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Username Telegram"
-                                            android:textAlignment="center"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"/>
-                                    <com.google.android.material.textfield.TextInputEditText
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="3dp"
-                                            android:layout_marginRight="3dp"
-                                            android:maxLength="20"
-                                            android:maxLines="1"
-                                            android:singleLine="true"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"
-                                            android:textStyle="bold"
-                                            android:theme="@style/CardView.Dark"/>
-                                    <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Semester/Kelas"
-                                            android:textAlignment="center"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"/>
-                                    <com.google.android.material.textfield.TextInputEditText
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="3dp"
-                                            android:layout_marginRight="3dp"
-                                            android:maxLength="20"
-                                            android:maxLines="1"
-                                            android:singleLine="true"
-                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                                            android:textColor="@color/colorDark"
-                                            android:textStyle="bold"
-                                            android:theme="@style/CardView.Dark"/>
+                                                android:layout_marginLeft="20dp"
+                                                android:layout_marginRight="20dp"
+                                                android:paddingBottom="5dp"
+                                                app:boxStrokeColor="@color/colorBlue"
+                                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-                                    <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="40dp"
-                                            android:layout_marginLeft="-4dp"
-                                            android:layout_marginRight="-4dp"
-                                            android:text="SAVE"
-                                            android:textAllCaps="false"
-                                            android:textColor="@color/colorWhite"
-                                            android:textStyle="bold"
-                                    />
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:textStyle="bold"
+                                                    android:inputType="text"/>
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/email"
+                                                android:layout_marginLeft="28dp"
+                                                android:layout_marginRight="28dp"/>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="20dp"
+                                                android:layout_marginRight="20dp"
+                                                app:boxStrokeColor="@color/colorBlue"
+                                                android:paddingBottom="5dp"
+                                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:inputType="text"/>
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/no_hp"
+                                                android:layout_marginLeft="28dp"
+                                                android:layout_marginRight="28dp"/>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="20dp"
+                                                android:layout_marginRight="20dp"
+                                                app:boxStrokeColor="@color/colorBlue"
+                                                android:paddingBottom="5dp"
+                                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:inputType="number"/>
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/username_telegram"
+                                                android:layout_marginLeft="28dp"
+                                                android:layout_marginRight="28dp"/>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="20dp"
+                                                android:layout_marginRight="20dp"
+                                                app:boxStrokeColor="@color/colorBlue"
+                                                android:paddingBottom="5dp"
+                                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:inputType="text"/>
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/username_github"
+                                                android:layout_marginLeft="28dp"
+                                                android:layout_marginRight="28dp"/>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="20dp"
+                                                android:layout_marginRight="20dp"
+                                                app:boxStrokeColor="@color/colorBlue"
+                                                android:paddingBottom="5dp"
+                                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:inputType="text"/>
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/semester_kelas"
+                                                android:layout_marginLeft="28dp"
+                                                android:layout_marginRight="28dp"/>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="20dp"
+                                                android:layout_marginRight="20dp"
+                                                app:boxStrokeColor="@color/colorBlue"
+                                                android:paddingBottom="5dp"
+                                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:inputType="text"/>
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="vertical"
+                                                android:paddingTop="10dp"
+                                                android:paddingBottom="10dp">
+                                            <Button
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="40dp"
+                                                    android:layout_marginLeft="35dp"
+                                                    android:layout_marginRight="35dp"
+                                                    android:text="@string/save"
+                                                    android:textAllCaps="false"
+                                                    android:textColor="@color/colorWhite"
+                                                    android:textStyle="bold" />
+
+                                        </LinearLayout>
                                     </LinearLayout>
                                 </ScrollView>
                                 </LinearLayout>

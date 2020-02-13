@@ -7,10 +7,9 @@ class PluginUtils {
     companion object {
         var API_ENDPOINT = "https://plugin-apps-server.herokuapp.com/"
 
-        fun getToken(c : Context) : String {
+        fun getToken(c : Context) : String? {
             val s = c.getSharedPreferences("USER", MODE_PRIVATE)
-            val token = s?.getString("TOKEN", "UNDEFINED")
-            return token!!
+            return s?.getString("TOKEN", null)
         }
 
         fun setToken(context: Context, token : String){

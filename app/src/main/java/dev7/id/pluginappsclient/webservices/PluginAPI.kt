@@ -32,6 +32,9 @@ interface PluginAPIService {
     @GET("api/users")
     fun users(@Header("Authorization") api_token : String) : Call<WrappedListResponse<User>>
 
+    @GET("api/users/{member_id}")
+    fun getUserByMemberId(@Header("Authorization") api_token : String, @Path("member_id") memberId: String) : Call<WrappedListResponse<User>>
+
     @FormUrlEncoded
     @POST("api/login")
     fun login(@Field("member_id") member_id : String, @Field("password") password : String) : Call<WrappedResponse<User>>

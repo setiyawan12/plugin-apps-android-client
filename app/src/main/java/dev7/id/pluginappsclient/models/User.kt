@@ -6,22 +6,26 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class User(
-    @SerializedName("member_id") var member_id : String?,
-    @SerializedName("name") var name : String?,
-    @SerializedName("email") var email : String? ,
-    @SerializedName("role") var role : String?,
-    @SerializedName("avatar") var avatar : String?,
-    @SerializedName("status") var status : String?,
-    @SerializedName("api_token") var api_token : String?,
-    @SerializedName("username") var username: String?,
-    @SerializedName("phone") var phone: String?,
-    @SerializedName("telegram") var telegram: String?,
-    @SerializedName("bio") var bio: String?,
-    @SerializedName("github") var github: String?,
-    @SerializedName("place_of_birth") var pacle_of_birth: String?,
-    @SerializedName("date_of_birth") var date_of_birth: String?
-)
-    : Parcelable
-{
-    constructor() : this(null, null, null, null, null, null, null, null, null, null, null, null, null, null)
-}
+    @SerializedName("member_id") var member_id : String? = null,
+    @SerializedName("name") var name : String? = null,
+    @SerializedName("email") var email : String? = null ,
+    @SerializedName("role") var role : String? = null,
+    @SerializedName("avatar") var avatar : String? = null,
+    @SerializedName("status") var status : String? = null,
+    @SerializedName("api_token") var api_token : String? = null,
+    @SerializedName("personal") var personal : Personal? = null
+
+
+) : Parcelable
+
+@Parcelize
+data class Personal (
+    @SerializedName("nickname") var nickname: String? = null,
+    @SerializedName("nim") var nim: String? = null,
+    @SerializedName("phone") var phone: String? = null,
+    @SerializedName("telegram") var telegram: String? = null,
+    @SerializedName("bio") var bio: String? = null,
+    @SerializedName("github") var github: String? = null,
+    @SerializedName("place_of_birth") var pacle_of_birth: String? = null,
+    @SerializedName("date_of_birth") var date_of_birth: String? = null
+) : Parcelable

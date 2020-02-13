@@ -3,10 +3,10 @@ package dev7.id.pluginappsclient
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.Toast
 import dev7.id.pluginappsclient.contracts.activities.LoginActivityContract
 import dev7.id.pluginappsclient.presenters.activities.LoginActivityPresenter
+import dev7.id.pluginappsclient.utilities.PluginUtils
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
@@ -16,11 +16,9 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
+        isLoggedIn()
         presenter = LoginActivityPresenter(this)
         dologin()
-
-
-
     }
 
 
@@ -30,22 +28,24 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
             val p = etPass.text.toString().trim()
             if (i.isNotEmpty() && p.isNotEmpty()){
                 if (p.length > 6){
-                    presenter.login(i, p, this@LoginActivity)
+                    presenter.login(i, p)
                 }else{
                     toast("password harus lebih dari 6 karakter")
                 }
             }else{
                 toast("tolong isikan semua kolom")
             }
-
         }
     }
 
-
-
     override fun toast(message: String) = Toast.makeText(this@LoginActivity, message, Toast.LENGTH_LONG).show()
 
-    override fun success() = startActivity(Intent(this@LoginActivity, MainActivity::class.java)).also { finish() }
+    override fun success(token : String) {
+        PluginUtils.setToken(this, "Bearer $token")
+        toast(token)
+        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        finish()
+    }
 
     override fun isLoading(state: Boolean) { btnLogin.isEnabled = !state }
 
@@ -53,11 +53,14 @@ class LoginActivity : AppCompatActivity(), LoginActivityContract.View{
 
     override fun passwordError(err: String?) { inPass.error = err }
 
-    override fun notConect() {
-        btnLogin.isEnabled = true
+    override fun notConect() { btnLogin.isEnabled = true }
+
+    private fun isLoggedIn(){
+        val token = PluginUtils.getToken(this)
+        if(token != null){
+            startActivity(Intent(this, MainActivity::class.java)).also { finish() }
+        }
     }
-
-
 }
 
 
