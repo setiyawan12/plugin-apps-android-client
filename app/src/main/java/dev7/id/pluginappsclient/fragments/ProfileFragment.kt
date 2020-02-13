@@ -29,7 +29,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 view.username.text = it.name
                 view.nim.text = it.personal?.nim.toString()
                 view.phone.text = it.personal?.phone.toString()
-                view.github.text = if (it.personal == null) "" else it.personal?.github.toString()
+                view.github.text = if (it.personal?.github == null) "belum di isi" else it.personal?.github.toString()
                 view.telegram.text = it.personal?.telegram.toString()
             }
         }
