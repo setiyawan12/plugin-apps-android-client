@@ -27,5 +27,7 @@ data class Personal (
     @SerializedName("bio") var bio: String? = null,
     @SerializedName("github") var github: String? = null,
     @SerializedName("place_of_birth") var pacle_of_birth: String? = null,
-    @SerializedName("date_of_birth") var date_of_birth: String? = null
+    @SerializedName("role") var role: String? = null,
+    @SerializedName("date_of_birth") var date_of_birth: String? = null,
+    @SerializedName("Class") var Class: String? = null
 ) : Parcelable

@@ -27,10 +27,12 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             user?.let {
                 view.email.text = it.email
                 view.username.text = it.name
-                view.nim.text = it.personal?.nim.toString()
-                view.phone.text = it.personal?.phone.toString()
+                view.nim.text = if (it.personal?.nim == null) "belum di isi" else it.personal?.nim.toString()
+                view.phone.text = if (it.personal?.phone == null) "belum di isi" else it.personal?.phone.toString()
                 view.github.text = if (it.personal?.github == null) "belum di isi" else it.personal?.github.toString()
-                view.telegram.text = it.personal?.telegram.toString()
+                view.telegram.text = if (it.personal?.telegram == null) "belum di isi" else it.personal?.telegram.toString()
+                view.role.text= if (it.personal?.role == null) "belum di isi" else it.personal?.role.toString()
+                view.Class.text = if (it.personal?.Class == null) "belum di isi" else it.personal?.Class.toString()
             }
         }
     }
