@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportActionBar?.hide()
         setSupportActionBar(toolbar)
+//        supportActionBar?.hide()
         bottomBarListener()
         initFragment()
     }
@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() {
                             navStatus = 2
                         }
                     }
-
                     else -> {
                         fragment = DashboardFragment()
                         navStatus = 0

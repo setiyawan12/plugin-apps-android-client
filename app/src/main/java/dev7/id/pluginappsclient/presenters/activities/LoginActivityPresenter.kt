@@ -40,7 +40,7 @@ class LoginActivityPresenter(v : LoginActivityContract.View?) : LoginActivityCon
             override fun onResponse(call: Call<WrappedResponse<User>>, response: Response<WrappedResponse<User>>) {
                 if (response.isSuccessful){
                     val body = response.body()
-                    if (body !=null && body.status.equals("true")){
+                    if (body !=null && body.status){
                         view?.toast("Selamat datang ${body.data!!.name}")
                         view?.success(body.data?.api_token!!)
                     }else{
