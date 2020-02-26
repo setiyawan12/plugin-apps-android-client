@@ -1,6 +1,7 @@
 package dev7.id.pluginappsclient.webservices
 
 import com.google.gson.annotations.SerializedName
+import dev7.id.pluginappsclient.models.Personal
 import dev7.id.pluginappsclient.models.User
 import dev7.id.pluginappsclient.utilities.PluginUtils
 import okhttp3.OkHttpClient
@@ -41,6 +42,9 @@ interface PluginAPIService {
     @FormUrlEncoded
     @POST("api/login")
     fun login(@Field("member_id") member_id : String, @Field("password") password : String) : Call<WrappedResponse<User>>
+
+    @PATCH("api/user/data/profile")
+    fun updatePersonal(@Header("Authorization") api_token: String, @Body personal : Personal) : Call<WrappedResponse<Personal>>
 }
 
 
