@@ -5,11 +5,11 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import coil.transform.CircleCropTransformation
-import dev7.id.pluginappsclient.Profile_Activity
+import dev7.id.pluginappsclient.PersonActivity
+import dev7.id.pluginappsclient.PersonDetailActivity
 import dev7.id.pluginappsclient.R
 import dev7.id.pluginappsclient.models.User
 import dev7.id.pluginappsclient.utilities.PluginUtils
@@ -28,7 +28,7 @@ class UserAdapter(var users : List<User>, var context: Context) : RecyclerView.A
             itemView.userId.text = user.member_id
             itemView.userImage.load("${PluginUtils.API_ENDPOINT}/images/${user.avatar}"){ transformations(CircleCropTransformation()) }
             itemView.setOnClickListener {
-                context.startActivity(Intent(context,Profile_Activity::class.java).apply {
+                context.startActivity(Intent(context, PersonDetailActivity::class.java).apply {
                     putExtra("user",user)
                 })
 

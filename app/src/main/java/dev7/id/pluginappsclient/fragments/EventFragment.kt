@@ -1,34 +1,44 @@
 package dev7.id.pluginappsclient.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.GridLayout
 import androidx.fragment.app.Fragment
-import com.smarteist.autoimageslider.IndicatorAnimations
-import com.smarteist.autoimageslider.SliderAnimations
+import androidx.recyclerview.widget.GridLayoutManager
+import coil.api.load
+import com.jama.carouselview.enums.IndicatorAnimationType
+import com.jama.carouselview.enums.OffsetType
 import dev7.id.pluginappsclient.R
-import dev7.id.pluginappsclient.adapters.CarouselAdapter
+import dev7.id.pluginappsclient.adapters.EventAdapter
 import dev7.id.pluginappsclient.models.Event
-import kotlinx.android.synthetic.main.fragment_dashboard.view.*
+import kotlinx.android.synthetic.main.fragment_dashboard.*
+import kotlinx.android.synthetic.main.fragment_event.view.*
+import kotlinx.android.synthetic.main.item_list_carousel.view.*
 
-class EventFragment : Fragment(){
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View = inflater.inflate(R.layout.fragment_event, container, false)
+class EventFragment : Fragment(R.layout.fragment_event){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val events = mutableListOf<Event>().apply {
-            add(Event(1, "Pacar Ke 1 saya", "https://d3t543lkaz1xy.cloudfront.net/photo/5c934bf5da3b333254a9dfde_m"))
-            add(Event(1, "Pacar Ke 2 saya", "https://cdns.klimg.com/resized/670x335/p/headline/lucunya-lisa-blackpink-pakai-hoodie-ber-887da6.jpg"))
-            add(Event(1, "Mobile Bucin Saya", "https://cdn.bringatrailer.com/wp-content/uploads/2019/01/2014_lamborghini_gallardo_lp570-4_squadra_corse_154939335774674751f941082IMG_6502-940x554.jpg"))
-            add(Event(1, "Tapi Kan Cocote Tok :V", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKeigzh0DIqwVhrHlcwBMWiKpy3Ui6lKFHqJdNT-Wx5lv4g2LU9w&s")
-
-            )
+        carouselView.apply {
+            resource = R.layout.item_list_carousel
+            autoPlay = true
+            indicatorAnimationType = IndicatorAnimationType.THIN_WORM
+            carouselOffset = OffsetType.START
+            setCarouselViewListener { view, position ->
+                view.imageView.load("https://d15hng3vemx011.cloudfront.net/attachment/66838678621842369664.large")
+            }
+            show()
         }
-        view.imageSlider.sliderAdapter = CarouselAdapter(activity!!, events)
-        view.imageSlider.startAutoCycle()
-        view.imageSlider.setIndicatorAnimation(IndicatorAnimations.WORM)
-        view.imageSlider.setSliderTransformAnimation(SliderAnimations.ZOOMOUTTRANSFORMATION)
+
+        val eventsDummy = mutableListOf<Event>()
+        var i = 0
+        while(i < 10){
+            eventsDummy.add(Event(i, "Event $i", ""))
+            i++
+        }
+        view.rv_all_event.apply {
+            layoutManager = GridLayoutManager(activity, 2)
+            adapter = EventAdapter(eventsDummy, activity!!)
+        }
     }
-    }
+}

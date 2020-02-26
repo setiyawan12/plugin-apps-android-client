@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical">
 
-        <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/imageSlider"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="8dp"
-                app:sliderAnimationDuration="800"
-                app:sliderAutoCycleDirection="back_and_forth"
-                app:sliderAutoCycleEnabled="false"
-                app:sliderCircularHandlerEnabled="true"
-                app:sliderIndicatorAnimationDuration="2600"
-                app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMargin="15dp"
-                app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="3dp"
-                app:sliderIndicatorRadius="2dp"
-                app:sliderIndicatorSelectedColor="#5A5A5A"
-                app:sliderIndicatorUnselectedColor="#FFF"
-                app:sliderScrollTimeInSec="1"
-                app:sliderStartAutoCycle="true" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="8dp"
-            android:layout_below="@id/imageSlider"
-            android:id="@+id/rv_users"
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    <ProgressBar
-            android:visibility="gone"
-            android:id="@+id/loading"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-</RelativeLayout>
+        <com.jama.carouselview.CarouselView
+                android:id="@+id/carouselView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:carouselOffset="center"
+                app:enableSnapping="true"
+                app:indicatorAnimationType="drop"
+                app:indicatorPadding="5"
+                app:indicatorRadius="5"
+                app:indicatorSelectedColor="@color/colorAccent"
+                app:indicatorUnselectedColor="@color/colorPrimary"
+                app:resource="@layout/item_list_carousel"
+                app:scaleOnScroll="true"
+                app:setAutoPlay="true"
+                app:setAutoPlayDelay="2000"
+                app:size="6"
+                app:spacing="10" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_users"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+        <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+

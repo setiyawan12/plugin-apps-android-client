@@ -1,145 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+<androidx.core.widget.NestedScrollView
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        >
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent">
 
-<!--    <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/bg_header_login"-->
-<!--            />-->
-    <com.smarteist.autoimageslider.SliderView
-            android:id="@+id/imageSlider"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            app:sliderAnimationDuration="800"
-            app:sliderAutoCycleDirection="back_and_forth"
-            app:sliderAutoCycleEnabled="false"
-            app:sliderCircularHandlerEnabled="true"
-            app:sliderIndicatorAnimationDuration="2600"
-            app:sliderIndicatorGravity="center_horizontal|bottom"
-            app:sliderIndicatorMargin="15dp"
-            app:sliderIndicatorOrientation="horizontal"
-            app:sliderIndicatorPadding="3dp"
-            app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="#5A5A5A"
-            app:sliderIndicatorUnselectedColor="#FFF"
-            app:sliderScrollTimeInSec="1"
-            app:sliderStartAutoCycle="true" />
+        <LinearLayout
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ProgressBar
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:textColor="#000"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Event terbaru"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.jama.carouselview.CarouselView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:enableSnapping="true"
+                    app:scaleOnScroll="true"
+                    app:setAutoPlay="true"
+                    app:setAutoPlayDelay="2000"
+                    app:carouselOffset="center"
+                    app:indicatorAnimationType="drop"
+                    app:indicatorRadius="5"
+                    app:indicatorPadding="5"
+                    app:indicatorSelectedColor="@color/colorAccent"
+                    app:indicatorUnselectedColor="@color/colorPrimary"
+                    app:size="6"
+                    app:spacing="10"
+                    android:id="@+id/carouselView"
+                    app:resource="@layout/item_list_carousel"/>
+
+            <TextView
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:text="Seluruh event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_all_event"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/eventplace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="250dp"
-            android:clipToPadding="false"
-            android:layout_marginEnd="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="36dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-    />
+</androidx.core.widget.NestedScrollView>
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageSlider"
-            android:id="@+id/judul"
-            android:padding="5dp"
-            android:layout_marginTop="10dp"
-            android:text="Judul acara"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:layout_margin="10dp"/>
-    <View
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/judul"
-            android:layout_margin="12dp"
-            android:layout_height="1dp"
-            android:background="@color/colorDark" />
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/judul"
-            android:id="@+id/deskripsi"
-            android:padding="5dp"
-            android:layout_marginTop="20dp"
-            android:text="Deskripsi"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:layout_margin="10dp"/>
-    <View
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/deskripsi"
-            android:layout_margin="12dp"
-            android:layout_height="1dp"
-            android:background="@color/colorDark" />
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/deskripsi"
-            android:id="@+id/waktu"
-            android:padding="5dp"
-            android:layout_marginTop="20dp"
-            android:text="Waktu Dan Tanggal"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:layout_margin="10dp"/>
-    <View
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/waktu"
-            android:layout_margin="12dp"
-            android:layout_height="1dp"
-            android:background="@color/colorDark" />
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/waktu"
-            android:id="@+id/tempat"
-            android:padding="5dp"
-            android:layout_marginTop="20dp"
-            android:text="Tempat"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:layout_margin="10dp"/>
-    <View
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/tempat"
-            android:layout_margin="12dp"
-            android:layout_height="1dp"
-            android:background="@color/colorDark" />
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tempat"
-            android:id="@+id/kategori"
-            android:padding="5dp"
-            android:layout_marginTop="20dp"
-            android:text="Kategori"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:layout_margin="10dp"/>
-    <View
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/kategori"
-            android:layout_margin="12dp"
-            android:layout_height="1dp"
-            android:background="@color/colorDark" />
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/kategori"
-            android:id="@+id/poster"
-            android:padding="5dp"
-            android:layout_marginTop="20dp"
-            android:text="Pamflet/Poster"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:layout_margin="10dp"/>
 
-</RelativeLayout>

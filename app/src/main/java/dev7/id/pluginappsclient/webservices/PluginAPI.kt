@@ -29,6 +29,9 @@ class PluginAPI {
     }
 }
 interface PluginAPIService {
+    @GET("api/user/data/profile")
+    fun myProfile(@Header("Authorization") api_token: String) : Call<WrappedResponse<User>>
+
     @GET("api/users")
     fun users(@Header("Authorization") api_token : String) : Call<WrappedListResponse<User>>
 
@@ -42,22 +45,19 @@ interface PluginAPIService {
 
 
 
-//Izza wis tak gon ganti "data" eben gadi results
-//berlaku untuk kelas WrappedResponse dan WrappedListResponse
-//Kalo push an ini error saat get users, ganti "data" di bawah sesuai dengan gantiane izza
 data class WrappedResponse<T> (
     @SerializedName("message") var message : String?,
-    @SerializedName("status") var status : String? ,
+    @SerializedName("status") var status : Boolean ,
     @SerializedName("results") var data : T?
 ){
-    constructor() : this(null, null, null)
+    constructor() : this(null, false, null)
 }
 
 data class WrappedListResponse<T> (
     @SerializedName("message") var message : String?,
-    @SerializedName("status") var status : Boolean?,
-    @SerializedName("results") var data : List<T>?
+    @SerializedName("status") var status : Boolean,
+    @SerializedName("results") var data : List<T>
 ){
-    constructor() : this(null, null, null)
+    constructor() : this(null, false, listOf())
 
 }

@@ -9,7 +9,7 @@ import dev7.id.pluginappsclient.fragments.ContributionFragment
 import dev7.id.pluginappsclient.models.User
 import kotlinx.android.synthetic.main.activity_profile_.*
 
-class Profile_Activity : AppCompatActivity() {
+class PersonActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

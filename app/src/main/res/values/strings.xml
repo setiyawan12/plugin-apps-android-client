@@ -8,7 +8,7 @@
     <string name="password">Kata Sandi</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">Login</string>
-    <string name="title_activity_detail__event">Detail_EventActivity</string>
+    <string name="title_activity_detail__event"> </string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -106,5 +106,6 @@
     <string name="username_github">Username Github</string>
     <string name="semester_kelas">Semester/Kelas</string>
     <string name="save">SAVE</string>
+    <string name="title_activity_person_detail">PersonDetailActivity</string>
 
 </resources>
