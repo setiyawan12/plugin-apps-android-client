@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_account.view.*
 class AccountFragment : Fragment(R.layout.fragment_account), AccountFragmentContract.View{
     private var presenter = AccountFragmentPresenter(this)
     private var isEditing= false
+    private var isEditing2= false
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.btn_edit.setOnClickListener {
@@ -35,6 +36,7 @@ class AccountFragment : Fragment(R.layout.fragment_account), AccountFragmentCont
     private fun swicthEditText(){
         view!!.et_name.isEnabled=isEditing
         view!!.et_email.isEnabled=isEditing
+        view!!.et_role.isEnabled=isEditing
     }
 
     private fun updateProfile(){
@@ -66,6 +68,8 @@ class AccountFragment : Fragment(R.layout.fragment_account), AccountFragmentCont
         user?.let {
             view!!.et_name.setText(it.name)
             view!!.et_email.setText(it.email)
+            view!!.et_role.setText(it.role.toString())
         }
     }
+
 }
